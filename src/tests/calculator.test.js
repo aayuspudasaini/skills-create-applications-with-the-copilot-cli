@@ -38,3 +38,19 @@ test('division supports decimal results', () => {
 test('division by zero throws a RangeError', () => {
   assert.throws(() => calculator.division(10, 0), RangeError);
 });
+
+test('modulo handles the example from the image', () => {
+  assert.strictEqual(calculator.modulo(5, 2), 1);
+});
+
+test('power handles the example from the image', () => {
+  assert.strictEqual(calculator.power(2, 3), 8);
+});
+
+test('squareRoot handles the example from the image', () => {
+  assert.strictEqual(calculator.squareRoot(16), 4);
+});
+
+test('squareRoot throws a RangeError for negative values', () => {
+  assert.throws(() => calculator.squareRoot(-1), RangeError);
+});

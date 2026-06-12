@@ -3,6 +3,9 @@
 // - subtraction
 // - multiplication
 // - division
+// - modulo
+// - power
+// - square root
 
 function ensureNumber(value, name) {
   if (typeof value !== 'number' || Number.isNaN(value) || !Number.isFinite(value)) {
@@ -39,9 +42,36 @@ function division(a, b) {
   return a / b;
 }
 
+function modulo(a, b) {
+  ensureNumber(a, 'a');
+  ensureNumber(b, 'b');
+
+  return a % b;
+}
+
+function power(base, exponent) {
+  ensureNumber(base, 'base');
+  ensureNumber(exponent, 'exponent');
+
+  return base ** exponent;
+}
+
+function squareRoot(n) {
+  ensureNumber(n, 'n');
+
+  if (n < 0) {
+    throw new RangeError('Cannot take square root of a negative number');
+  }
+
+  return Math.sqrt(n);
+}
+
 module.exports = {
   addition,
   subtraction,
   multiplication,
   division,
+  modulo,
+  power,
+  squareRoot,
 };
