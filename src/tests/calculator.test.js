@@ -38,3 +38,27 @@ test('division supports decimal results', () => {
 test('division by zero throws a RangeError', () => {
   assert.throws(() => calculator.division(10, 0), RangeError);
 });
+
+test('modulo returns the remainder', () => {
+  assert.strictEqual(calculator.modulo(10, 3), 1);
+});
+
+test('modulo by zero throws a RangeError', () => {
+  assert.throws(() => calculator.modulo(10, 0), RangeError);
+});
+
+test('power returns base raised to exponent', () => {
+  assert.strictEqual(calculator.power(2, 3), 8);
+});
+
+test('power supports negative exponents', () => {
+  assert.strictEqual(calculator.power(2, -1), 0.5);
+});
+
+test('square root returns the positive root for perfect squares', () => {
+  assert.strictEqual(calculator.squareRoot(81), 9);
+});
+
+test('square root of negative numbers throws a RangeError', () => {
+  assert.throws(() => calculator.squareRoot(-1), RangeError);
+});
